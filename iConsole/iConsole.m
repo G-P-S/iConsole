@@ -45,6 +45,7 @@ static iConsole *sharedConsole = nil;
 
 #pragma mark -
 #pragma mark Private methods
+void exceptionHandler(NSException *exception);
 
 void exceptionHandler(NSException *exception)
 {
@@ -145,6 +146,9 @@ void exceptionHandler(NSException *exception)
 		case UIInterfaceOrientationLandscapeRight:
 			angle = M_PI_2;
 			break;
+        default:
+            angle = 0;
+            break;
 	}
 	return CGAffineTransformMakeRotation(angle);
 }
