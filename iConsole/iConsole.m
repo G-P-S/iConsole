@@ -505,19 +505,13 @@ void exceptionHandler(NSException *exception)
 	[sharedConsole.consoleView scrollRangeToVisible:NSMakeRange(sharedConsole.consoleView.text.length, 0)];
 }
 
-- (void)viewDidUnload
-{
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	
-	self.consoleView = nil;
-	self.inputField = nil;
-	self.infoButton = nil;
-}
-
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 	
+	self.consoleView = nil;
+	self.inputField = nil;
+	self.infoButton = nil;
 	[consoleView release];
 	[inputField release];
 	[infoButton release];
