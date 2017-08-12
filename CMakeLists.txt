@@ -3,7 +3,7 @@ list(APPEND CMAKE_MODULE_PATH ${GOPRO_TOOLS_DIR}/cmake)
 include("${GOPRO_TOOLS_DIR}/cmake/gopro.cmake")
 
 gopro_init(iConsole)
-gopro_begin_lib(iConsole GROUP 3rdparty)
+gopro_begin_lib(iConsole GROUP 3rdparty PLATFORMS ios)
 gopro_include_dirs(GTM)
 gopro_public_include_dirs(iConsole)
 gopro_files(DIR iConsole GROUP src
